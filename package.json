@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rm ./lib/* && tsc",
     "prepare": "yarn build",
+    "test": "./test.sh"
   },
   "repository": {
     "type": "git",
@@ -29,9 +30,18 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@types/chai": "^4.0.10",
+    "@types/enzyme": "^3.1.6",
+    "@types/enzyme-adapter-react-16": "^1.0.1",
+    "@types/mocha": "^2.2.45",
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
+    "chai": "^4.1.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "mocha": "^4.0.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "sinon": "^4.1.3"
   }
 }
