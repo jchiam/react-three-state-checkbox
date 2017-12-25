@@ -1,6 +1,7 @@
 # react-three-state-checkbox
 
 [![npm](https://img.shields.io/npm/v/react-three-state-checkbox.svg)](https://npmjs.org/package/react-three-state-checkbox)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jchiam/react-three-state-checkbox.svg)](https://github.com/jchiam/react-three-state-checkbox/)
 [![license](https://img.shields.io/github/license/jchiam/react-three-state-checkbox.svg)](https://opensource.org/licenses/MIT)
 
 React component for checkbox that supports the indeterminate state conveniently. This component is TypeScript compatible.

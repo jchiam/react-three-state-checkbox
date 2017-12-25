@@ -5,9 +5,8 @@ node_modules
 lib
 *.tgz
 
-# Test Builds
-tests/tests
-tests/*.js
+# Tests
+coverage
 
 # Misc
 yarn-error.log

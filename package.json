@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm ./lib/* && tsc",
     "prepare": "yarn prepush && yarn build",
-    "test": "./test.sh",
+    "test": "jest",
     "lint": "tslint -c tslint.json --project tsconfig.json",
     "prepush": "yarn test && yarn lint"
   },
@@ -30,22 +30,36 @@
     "LICENSE",
     "index.d.ts"
   ],
-  "dependencies": {},
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "./preprocessor.js"
+    },
+    "testMatch": [
+      "**/*spec.(ts|tsx)"
+    ]
+  },
+  "dependencies": {
+    "react-test-renderer": "^16.2.0"
+  },
   "devDependencies": {
-    "@types/chai": "^4.0.10",
     "@types/enzyme": "^3.1.6",
     "@types/enzyme-adapter-react-16": "^1.0.1",
+    "@types/jest": "^21.1.9",
     "@types/mocha": "^2.2.45",
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
-    "chai": "^4.1.2",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "husky": "^0.14.3",
+    "jest": "^22.0.4",
     "mocha": "^4.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "sinon": "^4.1.3",
     "tslint": "^5.8.0",
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.2"
