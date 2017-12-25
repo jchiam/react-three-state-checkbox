@@ -1,0 +1,37 @@
+{
+  "name": "react-three-state-checkbox",
+  "version": "0.0.1-beta2",
+  "description": "React component for checkbox that supports the indeterminate state conveniently. Edit",
+  "main": "lib/Checkbox.js",
+  "scripts": {
+    "build": "rm ./lib/* && tsc",
+    "prepare": "yarn build",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchiam/react-three-state-checkbox.git"
+  },
+  "keywords": [
+    "react",
+    "checkbox",
+    "indeterminate"
+  ],
+  "author": "Jonathan Chiam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jchiam/react-three-state-checkbox/issues"
+  },
+  "homepage": "https://github.com/jchiam/react-three-state-checkbox#readme",
+  "files": [
+    "lib",
+    "LICENSE",
+    "index.d.ts"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
