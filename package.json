@@ -5,9 +5,10 @@
   "main": "lib/Checkbox.js",
   "scripts": {
     "build": "rm ./lib/* && tsc",
-    "prepare": "yarn build",
+    "prepare": "yarn prepush && yarn build",
     "test": "./test.sh",
-    "prepush": "yarn test"
+    "lint": "tslint -c tslint.json --project tsconfig.json",
+    "prepush": "yarn test && yarn lint"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,9 @@
     "mocha": "^4.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "sinon": "^4.1.3"
+    "sinon": "^4.1.3",
+    "tslint": "^5.8.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.2"
   }
 }
