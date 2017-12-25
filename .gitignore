@@ -7,6 +7,7 @@ lib
 
 # Tests
 coverage
+junit.xml
 
 # Misc
 yarn-error.log
