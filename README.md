@@ -11,7 +11,7 @@ React component for checkbox that supports the indeterminate state conveniently.
 The most straightforward way to use this component in your project is to either use `npm` or `yarn`.
 ```
 # npm
-npm i react-three-state-checkbox
+npm i --save react-three-state-checkbox
 
 # yarn
 yarn add react-three-state-checkbox
