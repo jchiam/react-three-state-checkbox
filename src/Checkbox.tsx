@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CheckboxProps } from './index';
+import { CheckboxProps } from '../index';
 
 export default class Checkbox extends React.Component<CheckboxProps, any> {
   static defaultProps: Partial<CheckboxProps> = {

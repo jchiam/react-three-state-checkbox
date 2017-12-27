@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 
 configure({ adapter: new Adapter() });
 
-import Checkbox from '../Checkbox';
+import Checkbox from '../src/Checkbox';
 
 describe('<Checkbox />', () => {
   it('renders checkbox', () => {

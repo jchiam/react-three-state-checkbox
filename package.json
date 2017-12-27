@@ -2,7 +2,7 @@
   "name": "react-three-state-checkbox",
   "version": "1.1.0",
   "description": "React component for checkbox that supports the indeterminate state conveniently. Edit",
-  "main": "lib/Checkbox.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf ./lib && tsc",
     "prepare": "yarn prepush && yarn build",
@@ -27,8 +27,8 @@
   "homepage": "https://github.com/jchiam/react-three-state-checkbox#readme",
   "files": [
     "lib",
-    "LICENSE",
-    "index.d.ts"
+    "index.d.ts",
+    "LICENSE"
   ],
   "jest": {
     "mapCoverage": true,
