@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface CheckboxProps extends React.Props<Checkbox> {
   checked: boolean;
   indeterminate?: boolean;
+  className?: string;
   onChange?: () => void;
 }
 

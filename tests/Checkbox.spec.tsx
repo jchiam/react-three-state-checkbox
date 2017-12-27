@@ -15,15 +15,17 @@ describe('<Checkbox />', () => {
 
   it('renders checkbox with the right default props', () => {
     const wrapper = mount(<Checkbox checked={false} />);
-    const { checked, indeterminate } = wrapper.props();
+    const { checked, indeterminate, className } = wrapper.props();
     expect(checked).toEqual(false);
     expect(indeterminate).toEqual(false);
+    expect(className).toEqual('');
   });
 
-  it('renders checkbox with checked and indeterminate as true', () => {
-    const wrapper = mount(<Checkbox checked indeterminate />);
-    const { checked, indeterminate } = wrapper.props();
+  it('renders checkbox with all props defined', () => {
+    const wrapper = mount(<Checkbox checked indeterminate className="test-class" />);
+    const { checked, indeterminate, className } = wrapper.props();
     expect(checked).toEqual(true);
     expect(indeterminate).toEqual(true);
+    expect(className).toEqual('test-class');
   });
 });

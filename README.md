@@ -56,12 +56,13 @@ export default class App extends Component {
 ### Props
 | Props          | Type      | Description                                      |
 | -------------- | --------- | ------------------------------------------------ |
+| className      | string?   | Classname to be applied to the input element.    |
 | checked        | boolean   | Boolean value of checkbox's checked state.       |
-| indeterminate  | boolean   | Boolean value of checkbox's indeterminate state. |
-| onChange       | () => {}  | Function called when value of checkbox changes.  |
+| indeterminate  | boolean?  | Boolean value of checkbox's indeterminate state. |
+| onChange       | () => {}? | Function called when value of checkbox changes.  |
 
 ### Styling
-There are no additional dom wrappers around the input component, hence to style it, just select the `input` element.
+There are no additional dom wrappers around the input component. The `className` prop styles the `input` element directly.
 
 # License
 MIT Licensed. Copyright (c) Jonathan Chiam 2017.
