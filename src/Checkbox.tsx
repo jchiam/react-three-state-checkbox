@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CheckboxProps } from '../index';
 
 export default class Checkbox extends React.Component<CheckboxProps, any> {
+  /* istanbul ignore next: callback */
   static defaultProps: Partial<CheckboxProps> = {
     indeterminate: false,
     className: '',
@@ -15,6 +16,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
         type="checkbox"
         className={className}
         ref={input => {
+          /* istanbul ignore else */
           if (input) {
             input.checked = checked;
             input.indeterminate = indeterminate as boolean;

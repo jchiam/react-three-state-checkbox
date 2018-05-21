@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> renders checkbox 1`] = `
+<Checkbox
+  checked={true}
+  className=""
+  indeterminate={false}
+  onChange={[Function]}
+>
+  <input
+    className=""
+    onChange={[Function]}
+    type="checkbox"
+  />
+</Checkbox>
+`;
+
+exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
+<Checkbox
+  checked={true}
+  className="test-class"
+  indeterminate={true}
+  onChange={[Function]}
+>
+  <input
+    className="test-class"
+    onChange={[Function]}
+    type="checkbox"
+  />
+</Checkbox>
+`;
+
+exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
+<Checkbox
+  checked={false}
+  className=""
+  indeterminate={false}
+  onChange={[Function]}
+>
+  <input
+    className=""
+    onChange={[Function]}
+    type="checkbox"
+  />
+</Checkbox>
+`;
