@@ -59,6 +59,7 @@ export default class App extends Component {
 | className      | string?   | Classname to be applied to the input element.    |
 | checked        | boolean   | Boolean value of checkbox's checked state.       |
 | indeterminate  | boolean?  | Boolean value of checkbox's indeterminate state. |
+| disabled       | boolean?  | Boolean value of checkbox's disabled state.      |
 | onChange       | () => {}? | Function called when value of checkbox changes.  |
 
 ### Styling
