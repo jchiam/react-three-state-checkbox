@@ -7,10 +7,12 @@ exports[`<Checkbox /> renders checkbox 1`] = `
   disabled={false}
   indeterminate={false}
   onChange={[Function]}
+  style={Object {}}
 >
   <input
     className=""
     onChange={[Function]}
+    style={Object {}}
     type="checkbox"
   />
 </Checkbox>
@@ -23,10 +25,20 @@ exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
   disabled={false}
   indeterminate={true}
   onChange={[Function]}
+  style={
+    Object {
+      "margin": 0,
+    }
+  }
 >
   <input
     className="test-class"
     onChange={[Function]}
+    style={
+      Object {
+        "margin": 0,
+      }
+    }
     type="checkbox"
   />
 </Checkbox>
@@ -39,10 +51,12 @@ exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
   disabled={false}
   indeterminate={false}
   onChange={[Function]}
+  style={Object {}}
 >
   <input
     className=""
     onChange={[Function]}
+    style={Object {}}
     type="checkbox"
   />
 </Checkbox>

@@ -6,16 +6,18 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
   static defaultProps: Partial<CheckboxProps> = {
     indeterminate: false,
     className: '',
+    style: {},
     disabled: false,
     onChange: () => {}     // tslint:disable-line no-empty
   };
 
   render() {
-    const { className, checked, indeterminate, onChange, disabled } = this.props;
+    const { className, style, checked, indeterminate, onChange, disabled } = this.props;
     return (
       <input
         type="checkbox"
         className={className}
+        style={style}
         ref={input => {
           /* istanbul ignore else */
           if (input) {
