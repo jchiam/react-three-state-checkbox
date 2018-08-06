@@ -1,5 +1,13 @@
 import * as React from 'react';
-import { CheckboxProps } from '../index';
+
+export interface CheckboxProps extends React.Props<Checkbox> {
+  checked: boolean;
+  indeterminate?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+  disabled?: boolean;
+  onChange?: () => void;
+}
 
 export default class Checkbox extends React.Component<CheckboxProps, any> {
   /* istanbul ignore next: callback */
