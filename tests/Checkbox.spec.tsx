@@ -19,7 +19,7 @@ describe('<Checkbox />', () => {
   });
 
   it('renders checkbox with all props defined', () => {
-    const tree = mount(<Checkbox checked indeterminate className="test-class" />);
+    const tree = mount(<Checkbox checked indeterminate className="test-class" style={{ margin: 0 }} />);
     expect(toJson(tree)).toMatchSnapshot();
   });
 });

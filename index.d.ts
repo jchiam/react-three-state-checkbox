@@ -4,6 +4,7 @@ export interface CheckboxProps extends React.Props<Checkbox> {
   checked: boolean;
   indeterminate?: boolean;
   className?: string;
+  style?: React.CSSProperties;
   disabled?: boolean;
   onChange?: () => void;
 }
