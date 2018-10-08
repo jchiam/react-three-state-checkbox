@@ -6,7 +6,6 @@ exports[`<Checkbox /> renders checkbox 1`] = `
   className=""
   disabled={false}
   indeterminate={false}
-  onChange={[Function]}
   style={Object {}}
 >
   <input
@@ -24,7 +23,7 @@ exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
   className="test-class"
   disabled={false}
   indeterminate={true}
-  onChange={[Function]}
+  onChange={[MockFunction]}
   style={
     Object {
       "margin": 0,
@@ -50,7 +49,6 @@ exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
   className=""
   disabled={false}
   indeterminate={false}
-  onChange={[Function]}
   style={Object {}}
 >
   <input
