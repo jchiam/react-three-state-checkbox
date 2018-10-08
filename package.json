@@ -5,10 +5,14 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf ./lib && tsc",
-    "prepare": "yarn prepush && yarn build",
+    "prepare": "yarn test && yarn lint && yarn build",
     "test": "jest --coverage",
-    "lint": "tslint -c tslint.json --project tsconfig.json",
-    "prepush": "yarn test && yarn lint"
+    "lint": "tslint -c tslint.json --project tsconfig.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test && yarn lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -52,23 +56,23 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/enzyme": "^3.1.13",
+    "@types/enzyme": "^3.1.14",
     "@types/enzyme-adapter-react-16": "^1.0.3",
-    "@types/jest": "^23.3.1",
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.6",
+    "@types/jest": "^23.3.3",
+    "@types/react": "^16.4.16",
+    "@types/react-dom": "^16.0.8",
     "codecov": "^3.0.4",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
-    "husky": "^0.14.3",
-    "jest": "^23.4.2",
-    "jest-junit": "^5.1.0",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "ts-jest": "^23.1.2",
+    "husky": "^1.1.1",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^2.8.3"
+    "typescript": "^3.1.1"
   }
 }
