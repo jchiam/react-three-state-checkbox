@@ -6,17 +6,15 @@ export interface CheckboxProps extends React.Props<Checkbox> {
   className?: string;
   style?: React.CSSProperties;
   disabled?: boolean;
-  onChange?: () => void;
+  onChange?: (e: React.FormEvent) => void;
 }
 
 export default class Checkbox extends React.Component<CheckboxProps, any> {
-  /* istanbul ignore next: callback */
   static defaultProps: Partial<CheckboxProps> = {
     indeterminate: false,
     className: '',
     style: {},
-    disabled: false,
-    onChange: () => {}     // tslint:disable-line no-empty
+    disabled: false
   };
 
   render() {
@@ -34,7 +32,12 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
             input.disabled = disabled as boolean;
           }
         }}
-        onChange={onChange}
+        onChange={(e: React.FormEvent) => {
+          /* istanbul ignore else */
+          if (onChange) {
+            onChange(e);
+          }
+        }}
       />
     );
   }
