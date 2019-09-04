@@ -5,13 +5,13 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf ./lib && tsc",
-    "prepare": "yarn test && yarn lint && yarn build",
+    "prepare": "npm run test && npm run lint && npm run build",
     "test": "jest --coverage",
     "lint": "tslint -c tslint.json --project tsconfig.json"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn test && yarn lint"
+      "pre-push": "npm run test && npm run lint"
     }
   },
   "repository": {
