@@ -7,9 +7,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Execute
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm install
-    - run: npm test
+    - name: Install Dependencies
+      run: npm install --ignore-scripts
+    - name: Build
+      run: npm run build
+    - name: Lint
+      run: npm run lint
+    - name: Test
+      run: npm test
+    - name: Post Coverage
+      run: node_modules/.bin/codecov -t ${{ secrets.CODECOV_TOKEN }}
+  
+  security:
+    name: Security
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - name: NPM Audit
+      run: npm audit
