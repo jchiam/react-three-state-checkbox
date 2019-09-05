@@ -3,10 +3,6 @@
 exports[`<Checkbox /> renders checkbox 1`] = `
 <Checkbox
   checked={true}
-  className=""
-  disabled={false}
-  indeterminate={false}
-  style={Object {}}
 >
   <input
     className=""
@@ -21,7 +17,6 @@ exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
 <Checkbox
   checked={true}
   className="test-class"
-  disabled={false}
   indeterminate={true}
   onChange={[MockFunction]}
   style={
@@ -46,10 +41,6 @@ exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
 exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
 <Checkbox
   checked={false}
-  className=""
-  disabled={false}
-  indeterminate={false}
-  style={Object {}}
 >
   <input
     className=""
