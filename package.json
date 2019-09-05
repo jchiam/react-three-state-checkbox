@@ -7,7 +7,7 @@
     "build": "rm -rf ./lib && tsc",
     "prepare": "npm run test && npm run lint && npm run build",
     "test": "jest --coverage",
-    "lint": "tslint -c tslint.json --project tsconfig.json"
+    "lint": "eslint ./src --ext .ts,.tsx"
   },
   "husky": {
     "hooks": {
@@ -57,17 +57,22 @@
     "@types/jest": "^24.0.18",
     "@types/react": "^16.4.16",
     "@types/react-dom": "^16.0.8",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
     "codecov": "^3.0.4",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
+    "eslint": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.16.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "ts-jest": "^23.10.4",
-    "tslint": "^5.11.0",
-    "tslint-react": "^3.6.0",
     "typescript": "^3.1.1"
   }
 }
