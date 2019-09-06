@@ -67,4 +67,4 @@ export default class App extends Component {
 There are no additional dom wrappers around the input component. The `className` prop styles the `input` element directly.
 
 # License
-MIT Licensed. Copyright (c) Jonathan Chiam 2017.
+MIT Licensed. Copyright (c) Jonathan Chiam 2019.
