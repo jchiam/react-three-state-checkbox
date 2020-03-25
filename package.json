@@ -1,6 +1,6 @@
 {
   "name": "react-three-state-checkbox",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "React component for checkbox that supports the indeterminate state conveniently. Edit",
   "main": "lib/index.js",
   "scripts": {
