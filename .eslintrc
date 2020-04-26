@@ -1,44 +1,4 @@
 {
-  "parser":  "@typescript-eslint/parser",
-  "extends": [
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "eslint:recommended",
-    "plugin:import/react",
-    "plugin:import/errors",
-    "plugin:import/warnings"
-  ],
-  "plugins": ["react-hooks"],
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "rules": {
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-    "react/prop-types": "off",
-    "@typescript-eslint/array-type": ["error", { "default": "generic" }],
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-member-accessibility": "off",
-    "@typescript-eslint/indent": ["error", 2, { "SwitchCase": 1 }],
-    "@typescript-eslint/no-explicit-any": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"],
-        "moduleDirectory": ["node_modules", "src"]
-      }
-    },
-    "react": {
-      "version": "detect"
-    }
-  }
+  "extends": "@jchiam/eslint-config",
+  "rules": {}
 }
