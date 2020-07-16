@@ -9,7 +9,7 @@ export interface CheckboxProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox = ({ checked, indeterminate = false, className = '', style = {}, disabled = false, onChange }: CheckboxProps) => {
+const Checkbox = ({ checked, indeterminate = false, className = '', style = {}, disabled = false, onChange }: CheckboxProps): JSX.Element => {
   return (
     <input
       type="checkbox"
