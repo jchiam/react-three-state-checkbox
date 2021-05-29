@@ -7,12 +7,8 @@
     "build": "rm -rf ./lib && tsc",
     "prepare": "npm run test && npm run lint && npm run build",
     "test": "jest --coverage",
-    "lint": "eslint ./src --ext .ts,.tsx"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test && npm run lint"
-    }
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "postinstall": "is-ci || husky install"
   },
   "repository": {
     "type": "git",
@@ -70,7 +66,8 @@
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "husky": "^4.2.3",
+    "husky": "^6.0.0",
+    "is-ci": "^3.0.0",
     "jest": "^27.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
