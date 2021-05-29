@@ -37,6 +37,7 @@
   ],
   "jest": {
     "testURL": "http://localhost",
+    "testEnvironment": "jsdom",
     "collectCoverage": true,
     "moduleFileExtensions": [
       "ts",
@@ -56,25 +57,24 @@
   "devDependencies": {
     "@jchiam/eslint-config": "^1.0.0",
     "@types/enzyme": "^3.10.5",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^17.0.8",
+    "@types/react-dom": "^17.0.5",
     "@typescript-eslint/parser": "^4.24.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
     "codecov": "^3.6.5",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.4.4",
-    "eslint": "^7.4.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint": "^7.27.0",
+    "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "husky": "^4.2.3",
-    "jest": "^26.1.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "ts-jest": "^26.1.2",
-    "typescript": "^4.0.3"
+    "jest": "^27.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-jest": "^27.0.1",
+    "typescript": "^4.3.2"
   }
 }
