@@ -1,13 +1,15 @@
+import { ReactElement, CSSProperties, ChangeEvent } from 'react';
+
 export interface CheckboxProps {
   checked: boolean;
   indeterminate?: boolean;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   disabled?: boolean;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox = ({ checked, indeterminate = false, className = '', style = {}, disabled = false, onChange }: CheckboxProps): JSX.Element => {
+const Checkbox = ({ checked, indeterminate = false, className = '', style = {}, disabled = false, onChange }: CheckboxProps): ReactElement => {
   return (
     <input
       type="checkbox"
