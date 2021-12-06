@@ -1,8 +1,6 @@
-import { configure, mount } from 'enzyme';
-import * as Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import toJson from 'enzyme-to-json';
-
-configure({ adapter: new Adapter() });
+import * as renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import Checkbox from '../src/Checkbox';
 
@@ -12,17 +10,19 @@ describe('<Checkbox />', () => {
   });
 
   it('renders checkbox', () => {
-    const tree = mount(<Checkbox checked />);
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(renderer.create(
+      <Checkbox checked />
+    ).toJSON()).toMatchSnapshot();
   });
 
   it('renders checkbox with the right default props', () => {
-    const tree = mount(<Checkbox checked={false} />);
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(renderer.create(
+      <Checkbox checked={false} />
+    ).toJSON()).toMatchSnapshot();
   });
 
   it('renders checkbox with all props defined', () => {
-    const tree = mount(
+    expect(renderer.create(
       <Checkbox
         checked
         indeterminate
@@ -30,22 +30,19 @@ describe('<Checkbox />', () => {
         style={{ margin: 0 }}
         onChange={jest.fn()}
       />
-    );
-    expect(toJson(tree)).toMatchSnapshot();
+    ).toJSON()).toMatchSnapshot();;
   });
 
   it('onChange event triggers calls onChange prop', () => {
     const onChange = jest.fn();
-    const wrapper = mount(<Checkbox checked onChange={onChange} />);
-
-    // find checkbox
-    const result = wrapper.find('input');
-    expect(result).toHaveLength(1);
-    const checkbox = result.at(0);
+    render(<Checkbox checked={false} onChange={onChange} />);
+    const checkbox = screen.getByRole('checkbox');
 
     // simulate checkbox change
     expect(onChange).not.toHaveBeenCalled();
-    checkbox.simulate('change');
+    expect(checkbox).not.toBeChecked();
+    userEvent.click(checkbox);
     expect(onChange).toHaveBeenCalled();
+    expect(checkbox).toBeChecked();
   });
 });

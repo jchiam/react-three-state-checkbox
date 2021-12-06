@@ -1,52 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Checkbox /> renders checkbox 1`] = `
-<Checkbox
-  checked={true}
->
-  <input
-    className=""
-    onChange={[Function]}
-    style={Object {}}
-    type="checkbox"
-  />
-</Checkbox>
+<input
+  className=""
+  onChange={[Function]}
+  style={Object {}}
+  type="checkbox"
+/>
 `;
 
 exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
-<Checkbox
-  checked={true}
+<input
   className="test-class"
-  indeterminate={true}
-  onChange={[MockFunction]}
+  onChange={[Function]}
   style={
     Object {
       "margin": 0,
     }
   }
->
-  <input
-    className="test-class"
-    onChange={[Function]}
-    style={
-      Object {
-        "margin": 0,
-      }
-    }
-    type="checkbox"
-  />
-</Checkbox>
+  type="checkbox"
+/>
 `;
 
 exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
-<Checkbox
-  checked={false}
->
-  <input
-    className=""
-    onChange={[Function]}
-    style={Object {}}
-    type="checkbox"
-  />
-</Checkbox>
+<input
+  className=""
+  onChange={[Function]}
+  style={Object {}}
+  type="checkbox"
+/>
 `;
