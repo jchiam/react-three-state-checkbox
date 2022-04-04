@@ -33,7 +33,9 @@ describe('<Checkbox />', () => {
     ).toJSON()).toMatchSnapshot();;
   });
 
-  it('onChange event triggers calls onChange prop', () => {
+  it('onChange event triggers calls onChange prop', async () => {
+    const user = userEvent.setup();
+
     const onChange = jest.fn();
     render(<Checkbox checked={false} onChange={onChange} />);
     const checkbox = screen.getByRole('checkbox');
@@ -41,7 +43,7 @@ describe('<Checkbox />', () => {
     // simulate checkbox change
     expect(onChange).not.toHaveBeenCalled();
     expect(checkbox).not.toBeChecked();
-    userEvent.click(checkbox);
+    await user.click(checkbox);
     expect(onChange).toHaveBeenCalled();
     expect(checkbox).toBeChecked();
   });
