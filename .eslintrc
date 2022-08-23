@@ -1,5 +1,8 @@
 {
-  "extends": "@jchiam/eslint-config",
+  "extends": [
+    "@jchiam/eslint-config/recommended",
+    "@jchiam/eslint-config/react"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off"
   }
