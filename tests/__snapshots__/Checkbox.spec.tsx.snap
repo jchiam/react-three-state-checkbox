@@ -4,7 +4,7 @@ exports[`<Checkbox /> renders checkbox 1`] = `
 <input
   className=""
   onChange={[Function]}
-  style={Object {}}
+  style={{}}
   type="checkbox"
 />
 `;
@@ -14,7 +14,7 @@ exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
   className="test-class"
   onChange={[Function]}
   style={
-    Object {
+    {
       "margin": 0,
     }
   }
@@ -26,7 +26,7 @@ exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
 <input
   className=""
   onChange={[Function]}
-  style={Object {}}
+  style={{}}
   type="checkbox"
 />
 `;
