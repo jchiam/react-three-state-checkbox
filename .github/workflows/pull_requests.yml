@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '16.x'
     - name: Install Dependencies
       run: npm install --ignore-scripts
     - name: Build
@@ -28,6 +28,6 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '16.x'
     - name: NPM Audit
       run: npm audit
