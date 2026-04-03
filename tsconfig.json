@@ -12,7 +12,9 @@
   },
   "include": [
     "./src/**/*.tsx",
-    "./src/**/*.ts"
+    "./src/**/*.ts",
+    "./tests/**/*.tsx",
+    "./tests/**/*.ts"
   ],
   "exclude": [
     "node_modules"
