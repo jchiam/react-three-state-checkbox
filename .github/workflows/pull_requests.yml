@@ -1,5 +1,12 @@
 name: Check PR
-on: push
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -10,8 +17,9 @@ jobs:
     - uses: actions/setup-node@v6
       with:
         node-version: '24.x'
+        cache: 'npm'
     - name: Install Dependencies
-      run: npm install --ignore-scripts
+      run: npm ci --ignore-scripts
     - name: Build
       run: npm run build
     - name: Lint
@@ -21,6 +29,7 @@ jobs:
     name: Test (React ${{ matrix.react }}, Node ${{ matrix.node }})
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         react: ['18', '19']
         node: ['22', '24']
@@ -29,8 +38,9 @@ jobs:
     - uses: actions/setup-node@v6
       with:
         node-version: '${{ matrix.node }}.x'
+        cache: 'npm'
     - name: Install Dependencies
-      run: npm install --ignore-scripts
+      run: npm ci --ignore-scripts
     - name: Override React 18
       if: matrix.react == '18'
       run: npm install --no-save --legacy-peer-deps react@18 react-dom@18
@@ -50,5 +60,6 @@ jobs:
     - uses: actions/setup-node@v6
       with:
         node-version: '24.x'
+        cache: 'npm'
     - name: NPM Audit
       run: npm audit
