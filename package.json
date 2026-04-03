@@ -46,7 +46,22 @@
       "js"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
+      "^.+\\.(ts|tsx)$": [
+        "@swc/jest",
+        {
+          "jsc": {
+            "parser": {
+              "syntax": "typescript",
+              "tsx": true
+            },
+            "transform": {
+              "react": {
+                "runtime": "automatic"
+              }
+            }
+          }
+        }
+      ]
     },
     "testMatch": [
       "**/*spec.(ts|tsx)"
@@ -54,27 +69,27 @@
   },
   "devDependencies": {
     "@jchiam/eslint-config": "^5.0.2",
+    "@swc/core": "^1.15.21",
+    "@swc/jest": "^0.2.39",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^22.19.16",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^9.0.0",
+    "eslint": "^9.39.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^29.0.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
     "husky": "^9.1.7",
-    "is-ci": "^3.0.0",
+    "is-ci": "^4.1.0",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "ts-jest": "^29.2.4",
-    "typescript": "^5.4.0",
+    "typescript": "^6.0.2",
     "typescript-eslint": "^8.0.0"
   },
   "peerDependencies": {
