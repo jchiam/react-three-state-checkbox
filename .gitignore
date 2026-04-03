@@ -7,3 +7,6 @@ lib
 
 # Tests
 coverage
+
+# Husky internals (auto-generated at install time)
+.husky/_
