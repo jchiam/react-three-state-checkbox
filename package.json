@@ -51,7 +51,7 @@
   "devDependencies": {
     "@jchiam/eslint-config": "^5.0.2",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^15.0.2",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.19.16",
