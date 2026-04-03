@@ -1,32 +1,29 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`<Checkbox /> renders checkbox 1`] = `
-<input
-  className=""
-  onChange={[Function]}
-  style={{}}
-  type="checkbox"
-/>
+<DocumentFragment>
+  <input
+    class=""
+    type="checkbox"
+  />
+</DocumentFragment>
 `;
 
 exports[`<Checkbox /> renders checkbox with all props defined 1`] = `
-<input
-  className="test-class"
-  onChange={[Function]}
-  style={
-    {
-      "margin": 0,
-    }
-  }
-  type="checkbox"
-/>
+<DocumentFragment>
+  <input
+    class="test-class"
+    style="margin: 0px;"
+    type="checkbox"
+  />
+</DocumentFragment>
 `;
 
 exports[`<Checkbox /> renders checkbox with the right default props 1`] = `
-<input
-  className=""
-  onChange={[Function]}
-  style={{}}
-  type="checkbox"
-/>
+<DocumentFragment>
+  <input
+    class=""
+    type="checkbox"
+  />
+</DocumentFragment>
 `;

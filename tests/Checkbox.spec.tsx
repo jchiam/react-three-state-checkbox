@@ -1,5 +1,3 @@
-import * as React from 'react';
-import * as renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -11,19 +9,17 @@ describe('<Checkbox />', () => {
   });
 
   it('renders checkbox', () => {
-    expect(renderer.create(
-      <Checkbox checked />
-    ).toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Checkbox checked />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders checkbox with the right default props', () => {
-    expect(renderer.create(
-      <Checkbox checked={false} />
-    ).toJSON()).toMatchSnapshot();
+    const { asFragment } = render(<Checkbox checked={false} />);
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('renders checkbox with all props defined', () => {
-    expect(renderer.create(
+    const { asFragment } = render(
       <Checkbox
         checked
         indeterminate
@@ -31,7 +27,8 @@ describe('<Checkbox />', () => {
         style={{ margin: 0 }}
         onChange={jest.fn()}
       />
-    ).toJSON()).toMatchSnapshot();;
+    );
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('onChange event triggers calls onChange prop', async () => {
