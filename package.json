@@ -46,19 +46,22 @@
       "js"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)$": ["@swc/jest", {
-        "jsc": {
-          "parser": {
-            "syntax": "typescript",
-            "tsx": true
-          },
-          "transform": {
-            "react": {
-              "runtime": "automatic"
+      "^.+\\.(ts|tsx)$": [
+        "@swc/jest",
+        {
+          "jsc": {
+            "parser": {
+              "syntax": "typescript",
+              "tsx": true
+            },
+            "transform": {
+              "react": {
+                "runtime": "automatic"
+              }
             }
           }
         }
-      }]
+      ]
     },
     "testMatch": [
       "**/*spec.(ts|tsx)"
@@ -73,7 +76,6 @@
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^22.19.16",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.0.0",
@@ -82,7 +84,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
     "husky": "^9.1.7",
-    "is-ci": "^3.0.0",
+    "is-ci": "^4.1.0",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "react": "^19.2.4",
