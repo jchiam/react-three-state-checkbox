@@ -7,3 +7,16 @@ lib
 
 # Tests
 coverage
+
+# Husky internals (auto-generated at install time)
+.husky/_
+
+# Environment variables
+.env
+
+# Logs
+npm-debug.log*
+
+# OS metadata
+.DS_Store
+Thumbs.db
