@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "target": "es6",
+    "target": "ES2020",
     "module": "commonjs",
-    "noImplicitAny": true,
-    "strictNullChecks": true,
+    "strict": true,
+    "skipLibCheck": true,
     "declaration": true,
     "sourceMap": true,
-    "jsx": "react-jsx",
-    "typeRoots": ["node_modules/@types"]
+    "jsx": "react-jsx"
   },
   "include": [
     "./src/**/*.tsx",
