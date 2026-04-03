@@ -3,7 +3,7 @@ on: push
 
 jobs:
   build:
-    name: Build and Test
+    name: Build and Lint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -16,13 +16,31 @@ jobs:
       run: npm run build
     - name: Lint
       run: npm run lint
+
+  test:
+    name: Test (React ${{ matrix.react }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        react: ['18', '19']
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+    - name: Install Dependencies
+      run: npm install --ignore-scripts
+    - name: Override React 18
+      if: matrix.react == '18'
+      run: npm install --no-save --legacy-peer-deps react@18 react-dom@18
     - name: Test
       run: npm test
     - name: Post Coverage
+      if: matrix.react == '19'
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-  
+
   security:
     name: Security
     runs-on: ubuntu-latest
