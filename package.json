@@ -68,7 +68,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
     "husky": "^9.1.7",
-    "is-ci": "^3.0.0",
+    "is-ci": "^4.1.0",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "react": "^19.2.4",
