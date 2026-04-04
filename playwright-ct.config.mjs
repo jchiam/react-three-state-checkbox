@@ -3,6 +3,7 @@ import istanbul from 'vite-plugin-istanbul';
 
 export default defineConfig({
   testDir: './tests',
+  snapshotPathTemplate: '{testDir}/{testFileDir}/{testFileName}-snapshots/{arg}-{projectName}{ext}',
   timeout: 10 * 1000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
