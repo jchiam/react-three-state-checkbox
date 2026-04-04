@@ -7,13 +7,12 @@
     "skipLibCheck": true,
     "declaration": true,
     "sourceMap": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "rootDir": "./src"
   },
   "include": [
     "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "./tests/**/*.tsx",
-    "./tests/**/*.ts"
+    "./src/**/*.ts"
   ],
   "exclude": [
     "node_modules"
