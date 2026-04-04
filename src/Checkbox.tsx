@@ -1,38 +1,35 @@
-import { ReactElement, CSSProperties, ChangeEvent, useCallback } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef, forwardRef, useCallback } from 'react';
 
-export interface CheckboxProps {
+export interface CheckboxProps extends Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'checked' | 'onChange' | 'readOnly'> {
   checked: boolean;
   indeterminate?: boolean;
-  className?: string;
-  style?: CSSProperties;
-  disabled?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox = ({
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   checked,
   indeterminate = false,
-  className = '',
-  style = {},
-  disabled = false,
-  onChange
-}: CheckboxProps): ReactElement => {
+  onChange,
+  ...rest
+}, forwardedRef) => {
   const ref = useCallback((input: HTMLInputElement | null) => {
     if (input) input.indeterminate = indeterminate;
-  }, [indeterminate]);
+    if (typeof forwardedRef === 'function') forwardedRef(input);
+    else if (forwardedRef) forwardedRef.current = input;
+  }, [indeterminate, forwardedRef]);
 
   return (
     <input
+      {...rest}
       type="checkbox"
       checked={checked}
-      disabled={disabled}
       readOnly={!onChange}
-      className={className}
-      style={style}
       ref={ref}
       onChange={onChange}
     />
   );
-};
+});
+
+Checkbox.displayName = 'Checkbox';
 
 export default Checkbox;

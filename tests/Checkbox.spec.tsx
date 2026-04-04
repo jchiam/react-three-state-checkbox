@@ -52,4 +52,30 @@ test.describe('<Checkbox />', () => {
     await component.click();
     await expect(component).toBeChecked();
   });
+
+  test('forwards name prop to input element', async ({ mount }) => {
+    const component = await mount(<Checkbox checked name="my-checkbox" />);
+    await expect(component).toHaveAttribute('name', 'my-checkbox');
+  });
+
+  test('forwards id prop to input element', async ({ mount }) => {
+    const component = await mount(<Checkbox checked id="my-checkbox-id" />);
+    await expect(component).toHaveAttribute('id', 'my-checkbox-id');
+  });
+
+  test('forwards aria-label prop to input element', async ({ mount }) => {
+    const component = await mount(<Checkbox checked aria-label="Select all" />);
+    await expect(component).toHaveAttribute('aria-label', 'Select all');
+  });
+
+  test('forwards data-* props to input element', async ({ mount }) => {
+    const component = await mount(<Checkbox checked data-testid="my-checkbox" />);
+    await expect(component).toHaveAttribute('data-testid', 'my-checkbox');
+  });
+
+  test('type prop cannot be overridden', async ({ mount }) => {
+    // @ts-expect-error intentionally passing invalid type to verify it is overridden
+    const component = await mount(<Checkbox checked type="radio" />);
+    await expect(component).toHaveAttribute('type', 'checkbox');
+  });
 });
