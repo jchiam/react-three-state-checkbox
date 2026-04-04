@@ -62,10 +62,9 @@ export default function App() {
 | -------------- | ------------------------------------------------- | ------------------------------------------------ |
 | checked        | boolean                                           | Boolean value of checkbox's checked state.       |
 | indeterminate  | boolean?                                          | Boolean value of checkbox's indeterminate state. |
-| className      | string?                                           | Classname to be applied to the input element.    |
-| style          | React.CSSProperties?                              | Inline styles to be passed to input element.     |
-| disabled       | boolean?                                          | Boolean value of checkbox's disabled state.      |
 | onChange       | ((e: ChangeEvent<HTMLInputElement>) => void)?     | Function called when value of checkbox changes.  |
+
+All other native `<input>` HTML attributes (`id`, `name`, `className`, `style`, `disabled`, `aria-*`, `data-*`, etc.) are forwarded directly to the underlying input element. The `type` and `readOnly` props are controlled by the component and cannot be overridden.
 
 ### Styling
 There are no additional dom wrappers around the input component. The `className` prop styles the `input` element directly.
