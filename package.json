@@ -53,6 +53,7 @@
     "react-dom": "^19.2.4",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.0.0",
+    "vite": "^7.3.1",
     "vite-plugin-istanbul": "^8.0.0"
   },
   "peerDependencies": {
