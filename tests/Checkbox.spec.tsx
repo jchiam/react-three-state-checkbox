@@ -2,6 +2,8 @@ import { test, expect } from './fixtures';
 
 import Checkbox from '../src/Checkbox';
 import ControlledCheckbox from './stories/ControlledCheckbox';
+import FunctionRefCheckbox from './stories/FunctionRefCheckbox';
+import ObjectRefCheckbox from './stories/ObjectRefCheckbox';
 
 test.describe('<Checkbox />', () => {
   test('is checked when checked prop is true', async ({ mount }) => {
@@ -77,5 +79,15 @@ test.describe('<Checkbox />', () => {
     // @ts-expect-error intentionally passing invalid type to verify it is overridden
     const component = await mount(<Checkbox checked type="radio" />);
     await expect(component).toHaveAttribute('type', 'checkbox');
+  });
+
+  test('forwards function ref to input element', async ({ mount }) => {
+    const component = await mount(<FunctionRefCheckbox />);
+    await expect(component).toHaveAttribute('data-ref-set', 'true');
+  });
+
+  test('forwards object ref to input element', async ({ mount }) => {
+    const component = await mount(<ObjectRefCheckbox />);
+    await expect(component).toHaveAttribute('data-ref-set', 'true');
   });
 });
