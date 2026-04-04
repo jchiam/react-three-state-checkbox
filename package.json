@@ -32,7 +32,8 @@
     "node": ">=22"
   },
   "files": [
-    "lib",
+    "lib/src",
+    "src",
     "LICENSE"
   ],
   "devDependencies": {
