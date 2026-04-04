@@ -41,6 +41,8 @@ jobs:
         cache: 'npm'
     - name: Install Dependencies
       run: npm ci --ignore-scripts
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
     - name: Override React 18
       if: matrix.react == '18'
       run: npm install --no-save --legacy-peer-deps react@18 react-dom@18
@@ -48,9 +50,10 @@ jobs:
       run: npm test
     - name: Post Coverage
       if: matrix.react == '19' && matrix.node == '24'
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        files: coverage/lcov.info
 
   security:
     name: Security

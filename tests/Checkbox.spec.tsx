@@ -1,48 +1,55 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { test, expect } from './fixtures';
 
 import Checkbox from '../src/Checkbox';
+import ControlledCheckbox from './stories/ControlledCheckbox';
 
-describe('<Checkbox />', () => {
-  afterEach(() => {
-    jest.resetAllMocks();
+test.describe('<Checkbox />', () => {
+  test('is checked when checked prop is true', async ({ mount }) => {
+    const component = await mount(<Checkbox checked />);
+    await expect(component).toBeChecked();
+    await expect(component).toHaveScreenshot('checked.png');
   });
 
-  it('renders checkbox', () => {
-    const { asFragment } = render(<Checkbox checked />);
-    expect(asFragment()).toMatchSnapshot();
+  test('is unchecked when checked prop is false', async ({ mount }) => {
+    const component = await mount(<Checkbox checked={false} />);
+    await expect(component).not.toBeChecked();
+    await expect(component).toHaveScreenshot('unchecked.png');
   });
 
-  it('renders checkbox with the right default props', () => {
-    const { asFragment } = render(<Checkbox checked={false} />);
-    expect(asFragment()).toMatchSnapshot();
+  test('is indeterminate when indeterminate prop is true', async ({ mount }) => {
+    const component = await mount(<Checkbox checked={false} indeterminate />);
+    const isIndeterminate = await component.evaluate((el: HTMLInputElement) => el.indeterminate);
+    expect(isIndeterminate).toBe(true);
+    const matchesPseudoClass = await component.evaluate((el) => el.matches(':indeterminate'));
+    expect(matchesPseudoClass).toBe(true);
+    await expect(component).toHaveScreenshot('indeterminate.png');
   });
 
-  it('renders checkbox with all props defined', () => {
-    const { asFragment } = render(
-      <Checkbox
-        checked
-        indeterminate
-        className="test-class"
-        style={{ margin: 0 }}
-        onChange={jest.fn()}
-      />
-    );
-    expect(asFragment()).toMatchSnapshot();
+  test('is not indeterminate by default', async ({ mount }) => {
+    const component = await mount(<Checkbox checked={false} />);
+    const isIndeterminate = await component.evaluate((el: HTMLInputElement) => el.indeterminate);
+    expect(isIndeterminate).toBe(false);
   });
 
-  it('onChange event triggers calls onChange prop', async () => {
-    const user = userEvent.setup();
+  test('is disabled when disabled prop is true', async ({ mount }) => {
+    const component = await mount(<Checkbox checked={false} disabled />);
+    await expect(component).toBeDisabled();
+  });
 
-    const onChange = jest.fn();
-    render(<Checkbox checked={false} onChange={onChange} />);
-    const checkbox = screen.getByRole('checkbox');
+  test('applies className prop', async ({ mount }) => {
+    const component = await mount(<Checkbox checked className="test-class" />);
+    await expect(component).toHaveClass('test-class');
+  });
 
-    // simulate checkbox change
-    expect(onChange).not.toHaveBeenCalled();
-    expect(checkbox).not.toBeChecked();
-    await user.click(checkbox);
-    expect(onChange).toHaveBeenCalled();
-    expect(checkbox).toBeChecked();
+  test('applies style prop', async ({ mount }) => {
+    const component = await mount(<Checkbox checked style={{ margin: '10px' }} />);
+    await expect(component).toHaveCSS('margin', '10px');
+  });
+
+  test('calls onChange when clicked', async ({ mount }) => {
+    const component = await mount(<ControlledCheckbox />);
+    await expect(component).not.toBeChecked();
+    await component.click();
+    await expect(component).toBeChecked();
   });
 });
