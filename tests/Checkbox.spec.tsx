@@ -90,4 +90,9 @@ test.describe('<Checkbox />', () => {
     const component = await mount(<ObjectRefCheckbox />);
     await expect(component).toHaveAttribute('data-ref-set', 'true');
   });
+
+  test('clears ref on unmount', async ({ mount }) => {
+    const component = await mount(<Checkbox checked />);
+    await component.unmount();
+  });
 });
