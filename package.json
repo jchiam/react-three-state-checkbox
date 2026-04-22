@@ -2,8 +2,8 @@
   "name": "react-three-state-checkbox",
   "version": "4.0.0",
   "description": "React component for checkbox that supports the indeterminate state conveniently.",
-  "main": "lib/src/index.js",
-  "types": "lib/src/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "build": "rm -rf ./lib && tsc",
@@ -32,7 +32,7 @@
     "node": ">=22"
   },
   "files": [
-    "lib/src",
+    "lib",
     "src",
     "LICENSE"
   ],
