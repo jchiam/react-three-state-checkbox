@@ -33,7 +33,6 @@
   },
   "files": [
     "lib",
-    "src",
     "LICENSE"
   ],
   "devDependencies": {
