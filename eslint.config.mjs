@@ -7,7 +7,7 @@ export default [
   ...react,
   {
     rules: {
-      'react/react-in-jsx-scope': 'off',
+      '@eslint-react/no-forward-ref': 'off',
     },
   },
 ];
