@@ -59,5 +59,10 @@
   "peerDependencies": {
     "react": "18 || 19",
     "react-dom": "18 || 19"
+  },
+  "overrides": {
+    "vite": "^8.0.8",
+    "@vitejs/plugin-react": "^5.0.0",
+    "esbuild": "^0.25.0"
   }
 }
