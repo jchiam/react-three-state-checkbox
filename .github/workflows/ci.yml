@@ -22,6 +22,8 @@ jobs:
       with:
         node-version: '24.x'
         cache: 'npm'
+    - name: Pin npm
+      run: npm install -g npm@11
     - name: Install Dependencies
       run: npm ci --ignore-scripts
     - name: Build
@@ -43,6 +45,8 @@ jobs:
       with:
         node-version: '${{ matrix.node }}.x'
         cache: 'npm'
+    - name: Pin npm
+      run: npm install -g npm@11
     - name: Install Dependencies
       run: npm ci --ignore-scripts
     - name: Install Playwright Browsers
@@ -68,5 +72,7 @@ jobs:
       with:
         node-version: '24.x'
         cache: 'npm'
+    - name: Pin npm
+      run: npm install -g npm@11
     - name: NPM Audit
       run: npm audit
