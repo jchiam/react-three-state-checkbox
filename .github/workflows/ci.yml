@@ -17,7 +17,7 @@ jobs:
     name: Build and Lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: actions/setup-node@v6
       with:
         node-version: '24.x'
@@ -38,7 +38,7 @@ jobs:
         react: ['18', '19']
         node: ['22', '24']
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: actions/setup-node@v6
       with:
         node-version: '${{ matrix.node }}.x'
@@ -63,7 +63,7 @@ jobs:
     name: Security
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
     - uses: actions/setup-node@v6
       with:
         node-version: '24.x'
