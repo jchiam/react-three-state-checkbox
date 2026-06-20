@@ -6,6 +6,9 @@ export interface CheckboxProps extends Omit<ComponentPropsWithoutRef<'input'>, '
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
+// forwardRef is still required to forward refs under React 18, which this
+// package supports (peerDependencies: react "18 || 19").
+// eslint-disable-next-line @eslint-react/no-forward-ref
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   checked,
   indeterminate = false,
