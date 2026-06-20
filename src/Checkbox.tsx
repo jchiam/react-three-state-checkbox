@@ -1,19 +1,20 @@
-import { ChangeEvent, ComponentPropsWithoutRef, Ref, useCallback } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef, forwardRef, useCallback } from 'react';
 
 export interface CheckboxProps extends Omit<ComponentPropsWithoutRef<'input'>, 'type' | 'checked' | 'onChange' | 'readOnly'> {
   checked: boolean;
   indeterminate?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  ref?: Ref<HTMLInputElement>;
 }
 
-const Checkbox = ({
+// forwardRef is still required to forward refs under React 18, which this
+// package supports (peerDependencies: react "18 || 19").
+// eslint-disable-next-line @eslint-react/no-forward-ref
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   checked,
   indeterminate = false,
   onChange,
-  ref: forwardedRef,
   ...rest
-}: CheckboxProps) => {
+}, forwardedRef) => {
   const ref = useCallback((input: HTMLInputElement | null) => {
     if (input) input.indeterminate = indeterminate;
     if (typeof forwardedRef === 'function') forwardedRef(input);
@@ -30,7 +31,7 @@ const Checkbox = ({
       onChange={onChange}
     />
   );
-};
+});
 
 Checkbox.displayName = 'Checkbox';
 
