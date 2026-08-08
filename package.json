@@ -60,8 +60,6 @@
     "react-dom": "18 || 19"
   },
   "overrides": {
-    "vite": "^8.0.8",
-    "@vitejs/plugin-react": "^5.0.0",
-    "js-yaml": "^4.2.0"
+    "js-yaml": "^4.3.1"
   }
 }
