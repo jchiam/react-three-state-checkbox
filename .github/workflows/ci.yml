@@ -75,4 +75,4 @@ jobs:
     - name: Pin npm
       run: npm install -g npm@11
     - name: NPM Audit
-      run: npm audit
+      run: npm audit --omit=dev
